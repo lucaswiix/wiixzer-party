@@ -23,8 +23,8 @@ export default class SetUserNamePopup extends Component {
 		return (
 			<div className={setUserNamePopupCssClasses}>
 				<div className="set-username-popup">
-					<span className="create-username-header">Who are you ?</span>
-					<span className="create-username-description">Let other people know who you are by choosing a display / username</span>
+					<span className="create-username-header">Qual o seu username ?</span>
+					<span className="create-username-description">Este nome vai diferenciar você de outras pessoas dentro da plataforma.</span>
 
 					<div className="username-details">
 
@@ -33,7 +33,7 @@ export default class SetUserNamePopup extends Component {
 							autoComplete="off"
 							className="input user-name"
 							maxLength="60"
-							placeholder="Username / display name"
+							placeholder="Nome de usuario"
 							tabIndex="0"
 							type="text"
 						/>
@@ -41,7 +41,7 @@ export default class SetUserNamePopup extends Component {
 
 					<div className="create-username button" onClick={() => {
 						handleSetUserName ( this.input.value.trim () )
-					}}>Continue
+					}}>Entrar
 					</div>
 				</div>
 			</div>
