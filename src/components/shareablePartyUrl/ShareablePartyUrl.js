@@ -20,7 +20,7 @@ export default class ShareablePartyUrl extends Component {
 
 		return (
 			<div className="share-party-url">
-				<h2 className="title">Your shareable party URL:</h2>
+				<h2 className="title">Compartilhe o link:</h2>
 				<input type="text"
 					   readOnly='readonly'
 					   value={partyUrl}

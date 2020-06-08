@@ -39,6 +39,10 @@ export default class VideoPlayer extends Component {
 		super ( props )
 		const { setPlayerIsLoadedState } = props
 
+		this.state = {
+			volume: 1
+		}
+
 		// Initially -> always make sure that the videoPlayerLoaded state is
 		// reset to false
 		setPlayerIsLoadedState ( false )
@@ -129,14 +133,21 @@ export default class VideoPlayer extends Component {
 		const videoPlayerClassNames = classNames ( 'video-player', {
 			'maximized': videoPlayerIsMaximized
 		} )
+		
+		const onVolumeChaneHandle = (e) => {
+			this.setState({
+				volume: e.target.value
+			})
+		}
 
 		return (
 			<div className={videoPlayerClassNames}>
 				<ReactPlayer
+					volume={this.state.volume}
 					url={ videoUrl }
 					width={ '100%' }
 					height={ '100%' }
-					muted={ videoPlayerIsMuted }
+					mutezd={ videoPlayerIsMuted }
 					playing={ videoIsPlaying }
 					ref={e => this.videoPlayer = e}
 					onReady={() => {
@@ -171,6 +182,8 @@ export default class VideoPlayer extends Component {
 					videoPlayerIsMaximized={ videoPlayerIsMaximized }
 					videoProgress={ videoProgress }
 					videoDuration={ videoDuration }
+					onVolumeChange={onVolumeChaneHandle}
+					videoVolume={this.state.volume}
 					handleMuteBtnPressed={ () => setPlayerMutedState ( !videoPlayerIsMuted ) }
 					handleMaximizeBtnPressed={ () => handleMaximizeBtnPressed (
 						videoPlayerIsMaximized,

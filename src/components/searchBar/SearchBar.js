@@ -43,7 +43,7 @@ export default class SearchBar extends Component {
 						autoComplete="off"
 						className="input"
 						maxLength="60"
-						placeholder="Search Videos / Movies"
+						placeholder="Buscar video"
 						tabIndex="0"
 						type="text"
 					/>

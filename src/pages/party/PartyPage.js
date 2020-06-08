@@ -137,10 +137,10 @@ class PartyPage extends Component {
 	renderPartyNotFoundMessage = () => {
 		return (
 			<div className="party-not-found-container">
-				<h1 className="header">Whoops..</h1>
-				<span className="description">The requested party with id <b>"{this.partyId}"</b>
-					does not seem to exist (anymore).. sorry! Could you check if you entered the right party-url?</span>
-				<div className="back-btn" onClick={() => this.props.router.push ( '/' )}>Return</div>
+				<h1 className="header">Ehh..</h1>
+				<span className="description">A festa no ID <b>"{this.partyId}"</b>
+					não existe mais... Começe criando uma agora!</span>
+				<div className="back-btn" onClick={() => this.props.router.push ( '/' )}>Voltar</div>
 			</div>
 		)
 	}

@@ -47,7 +47,7 @@ class SearchPage extends Component {
 		return (
 			<div className="browse-page">
 				<PageHeader
-					titleLeader='Search results'
+					titleLeader='Buscar video'
 					titleMain={currentQuery}
 				/>
 

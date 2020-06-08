@@ -66,7 +66,7 @@ export default class ChatBox extends Component {
 					{this.renderMessages ( messagesInParty )}
 				</div>
 
-				<form className="input-box" action="#" onSubmit={this.submitChatMessage}>
+				{/* <form className="input-box" action="#" onSubmit={this.submitChatMessage}>
 					<input
 						type="text"
 						ref={e => this.messageInput = e}
@@ -76,7 +76,7 @@ export default class ChatBox extends Component {
 					<input
 						className="submit"
 						type="submit"/>
-				</form>
+				</form> */}
 
 			</div>
 		)

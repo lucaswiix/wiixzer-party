@@ -43,28 +43,16 @@ class BrowsePage extends Component {
 
 		return (
 			<div className="browse-page">
+
 				<PageHeader
-					titleLeader='Hi'
-					titleMain={user.userName}
-					titleAfter={'watch any Youtube video in sync together with your friends!'}
+					titleLeader='CELLINSHOW!'
+					titleAfter={'Busque video ou playlist e assista sincronizado'}
 				/>
-
-				<div className="g-row">
-					<div className="introduction-text">
-						<p>3 easy steps to watch any Youtube video together with a friend:</p>
-						<ol>
-							<li>Search for & select any Youtube video</li>
-							<li>Share the custom generated party URL with your friends</li>
-							<li>Watch the video together in perfect sync!</li>
-						</ol>
-					</div>
-
 					<VideoList
 						showLoadingAnimation={isFetchingVideos}
 						youtubeVideos={youtubeVideos}
 						handleVideoSelection={handleVideoSelection}
 					/>
-				</div>
 			</div>
 		)
 	}

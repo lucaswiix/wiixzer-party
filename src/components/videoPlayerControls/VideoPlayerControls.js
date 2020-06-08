@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { videoUtils, generalUtils } from '../../core/utils'
 import classNames from 'classnames'
-
 // CSS
 import './VideoPlayerControls.css'
 
@@ -18,6 +17,8 @@ export default class VideoPlayerControls extends Component {
 		videoDuration: PropTypes.number,
 		handleMuteBtnPressed: PropTypes.func.isRequired,
 		handleMaximizeBtnPressed: PropTypes.func.isRequired,
+		videoVolume: PropTypes.func.isRequired,
+		onVolumeChange: PropTypes.func.isRequired
 	}
 
 	render () {
@@ -30,7 +31,9 @@ export default class VideoPlayerControls extends Component {
 			videoProgress,
 			videoDuration,
 			handleMuteBtnPressed,
-			handleMaximizeBtnPressed
+			handleMaximizeBtnPressed,
+			videoVolume,
+			onVolumeChange
 		} = this.props
 
 		if ( !videoDuration ) {
@@ -89,6 +92,13 @@ export default class VideoPlayerControls extends Component {
 									  timeInVideo: progressInSeconds
 								  }, partyId )
 							  }/>
+							  
+
+
+						<input type="number" placeholder="1.0" value={Number(videoVolume)} onChange={e => onVolumeChange(e)} step="0.01" min="0" max="1" style={{
+							maxWidth: '100%'
+						}}/>
+
 						<span className={muteBtnClassNames} onClick={ handleMuteBtnPressed }/>
 						<span className="current-time">{formattedProgressString}</span>
 
