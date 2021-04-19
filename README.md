@@ -45,8 +45,6 @@ The frontend is built using React ([create-react-app](https://github.com/faceboo
 ### ![redux-socket.io]()
 When a user pauses, plays or forwards a video, this action is emitted to the server. The server then broadcasts this action to all other connected users. Upon receiving an action from the server, the client processes this action and updates the playerState accordingly (i.e. from 'playing' to 'paused'). 
 
-As noted earlier, the frontend of `React-youtube-sync` uses Redux to manage it's state by dispatching actions. To prevent having two ‘kind’ of actions (websocket events and redux actions) flying all over we use a middleware called [redux-socket.io](https://github.com/itaylor/redux-socket.io) that interprets these websocket events as redux actions for us.
-
 ##### Communication from client to server
 By initializing this middleware with a 'prefix' parameter:
 ```shell 
